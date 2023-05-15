@@ -24,7 +24,7 @@ public class Power_Calculation {
         System.out.print("Enter the number(power): ");
         int power = input.nextInt();
 
-        System.out.print(cal_power(number, power));
+        System.out.print('Result: ' + cal_power(number, power));
 
         input.close();
     }
