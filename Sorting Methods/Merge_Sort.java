@@ -40,7 +40,7 @@ public class Merge_Sort {
     public static void main(String[] args) {
         int[] numbers = {5, 4, 2, 8, 6, 7, 1};
 
-        // Time Complexity = O(n*logn)
+        // Time Complexity = O(n * logn)
         divide(numbers, 0, numbers.length - 1);
 
         for(int i = 0; i < numbers.length; i++) {
