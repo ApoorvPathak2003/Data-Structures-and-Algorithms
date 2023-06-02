@@ -34,7 +34,7 @@ public class Quick_Sort {
         // Worst Time Complexity = O(n^2); pivot = smallest/largest element
         quick_sort(numbers, 0, numbers.length - 1);
 
-        for(int i = 0; i < numbers.length; i++) {
+        for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i] + " ");
         }
     }
