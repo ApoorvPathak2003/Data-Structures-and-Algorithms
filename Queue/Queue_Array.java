@@ -3,11 +3,11 @@ package Queue;
 public class Queue_Array {
     static class Queue {
         static int array[];
-        int size;
+        static int size;
         static int rear;
 
         Queue(int arr_size){
-            this.size = arr_size;
+            Queue.size = arr_size;
             array = new int[size];
             rear = -1;
         }
@@ -29,6 +29,7 @@ public class Queue_Array {
             array[++rear] = value;
         }
 
+        // Time Complexity = O(n)
         public int remove() {
             if (isEmpty()) {
                 System.out.println("The queue is empty.");
@@ -54,17 +55,30 @@ public class Queue_Array {
             
             return array[0];
         }
+
+        public void print_queue() {
+            for (int i = 0; i < rear + 1; i++) {
+                System.out.print(array[i] + " ");
+            }
+            System.out.println();
+        }
     }
     public static void main(String[] args) {
         Queue que_array = new Queue(4);
 
         que_array.add(0);
         que_array.add(10);
-        que_array.add(125);
+        que_array.add(1125);
         que_array.add(100);
+
+        System.out.print("Initial Queue: ");
+        que_array.print_queue();
 
         System.out.println("The Peeked Element: " + que_array.peek());
         System.err.println("The Removed Element: " + que_array.remove());
         System.out.println("The Peeked Element: " + que_array.peek());
+    
+        System.out.print("Final Queue: ");
+        que_array.print_queue();
     }
 }
