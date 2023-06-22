@@ -7,7 +7,7 @@ public class Circular_Queue_Array {
         static int rear = -1;
         static int front = -1;
 
-        Queue(int arr_size){
+        Queue(int arr_size) {
             this.size = arr_size;
             array = new int[size];  
         }
@@ -59,9 +59,16 @@ public class Circular_Queue_Array {
             
             return array[front];
         }
+
+        public void print_queue() {
+            for (int i = front; i < rear + 1; i++) {
+                System.out.print(array[i] + " ");
+            }
+            System.out.println();
+        }
     }
     public static void main(String[] args) {
-        Queue que_array = new Queue(5);
+        Queue que_array = new Queue(6);
 
         que_array.add(10);
         que_array.add(104);
@@ -69,14 +76,22 @@ public class Circular_Queue_Array {
         que_array.add(150);
         que_array.add(100);
 
-        System.out.println(que_array.remove());
-        
-        que_array.add(121);
-        
+        System.out.print("Initial Queue: ");
+        que_array.print_queue();
+
+        System.out.print("The Removed Element: ");
         System.out.println(que_array.remove());
 
+        que_array.add(121);
+
+        System.out.print("Queue after removing & adding the element: ");
+        que_array.print_queue();        
+        
+        System.out.println("The Removed Element: " + que_array.remove());
+
+        System.out.print("Final Queue: ");
         while (!que_array.isEmpty()) {
-            System.out.println(que_array.peek());
+            System.out.print(que_array.peek() + " ");
             que_array.remove();
         }
     }
