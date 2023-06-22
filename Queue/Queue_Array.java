@@ -56,11 +56,11 @@ public class Queue_Array {
         }
     }
     public static void main(String[] args) {
-        Queue que_array = new Queue(5);
+        Queue que_array = new Queue(4);
 
         que_array.add(0);
         que_array.add(10);
-        que_array.add(1125);
+        que_array.add(125);
         que_array.add(100);
 
         System.out.println("The Peeked Element: " + que_array.peek());
