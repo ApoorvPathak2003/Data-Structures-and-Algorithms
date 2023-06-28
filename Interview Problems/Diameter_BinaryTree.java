@@ -4,7 +4,7 @@ public class Diameter_BinaryTree {
         Node left;
         Node right;
 
-        Node(int data){
+        Node (int data) {
             this.data = data;
             this.left = null;
             this.right = null;
@@ -42,7 +42,7 @@ public class Diameter_BinaryTree {
         int diameter;
         int height;
 
-        TreeInfo(int diam,int height){
+        TreeInfo(int diam, int height){
             this.diameter = diam;
             this.height = height;
         }
@@ -51,14 +51,14 @@ public class Diameter_BinaryTree {
         if (root == null) {
             return new TreeInfo(0, 0);
         }
-        TreeInfo left_diameter = diameter_tree_approach_2(root.left);
-        TreeInfo right_diameter = diameter_tree_approach_2(root.right);
+        TreeInfo left_subtree = diameter_tree_approach_2(root.left);
+        TreeInfo right_subtree = diameter_tree_approach_2(root.right);
 
-        int treeinfo_height = Math.max(left_diameter.height, right_diameter.height) + 1;
+        int treeinfo_height = Math.max(left_subtree.height, right_subtree.height) + 1;
 
-        int diameter1 = left_diameter.diameter;
-        int diameter2 = right_diameter.diameter;
-        int diameter3 = left_diameter.diameter + right_diameter.diameter + 1;
+        int diameter1 = left_subtree.diameter;
+        int diameter2 = right_subtree.diameter;
+        int diameter3 = left_subtree.diameter + right_subtree.diameter + 1;
 
         int treeinfo_diameter = Math.max(diameter1, Math.max(diameter2, diameter3));
 
