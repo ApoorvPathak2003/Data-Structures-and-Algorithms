@@ -74,10 +74,9 @@ public class Sum_Nodes_k_Level {
     }
     public static void main(String[] args) {
         int nodes[] = {2, 5, -1, 0, -1, -1, 9, 6, -1, -1, 5, -1, -1};
-        int k = 1; 
         
         // k = 1 -> 2nd level from top
-        // level = 0 (top-level)
+        int k = 1; 
 
         binary_tree tree = new binary_tree();
         Node root = tree.create_binary_tree(nodes);
