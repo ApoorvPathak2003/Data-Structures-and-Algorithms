@@ -33,6 +33,6 @@ public class Sum_Denominations_Coin_Exchange_Problem {
             System.out.print(coins[i] + " ");
         }
 
-        System.out.print("\nMinimum coins required of given denominations to make a sum of '" + sum + "': " + problem_solver(coins, sum));
+        System.out.print("\nTotal number of ways to make a sum of '" + sum + "' using the given denominations: " + problem_solver(coins, sum));
     }
 }
