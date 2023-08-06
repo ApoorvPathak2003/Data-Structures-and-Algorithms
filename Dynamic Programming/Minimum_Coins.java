@@ -1,36 +1,29 @@
 public class Minimum_Coins {
     public static int minimum_coins(int[] coins, int sum) {
-        int[][] solution = new int[coins.length + 1][sum + 1];
-
-        for (int i = 0; i <= coins.length; i++) {
-            solution[i][0] = 0;
+        if (sum <= 0) {
+            return 0;
         }
 
-        for (int i = 0; i <= sum; i++) {
-            solution[0][i] = Integer.MAX_VALUE;
-        }
+        int[] solution = new int[sum + 1];
 
-        for (int i = 1; i <= coins.length; i++) {
-            for (int j = 1; j <= sum; j++) {
-                if (coins[i - 1] > j) {
-                    solution[i][j] = solution[i - 1][j];
-                } else {
-                    solution[i][j] = min(solution[i - 1][j], 1 + solution[i][j - coins[i - 1]]);
+        for (int i = 1; i <= sum; i++) {
+            solution[i] = Integer.MAX_VALUE;
+            for (int j = 0; j < coins.length; j++) {
+                if ((coins[j] <= i) && (solution[i - coins[j]] != Integer.MAX_VALUE)) {
+                    solution[i] = Math.min(solution[i], 1 + solution[i - coins[j]]);
                 }
             }
         }
 
-        return solution[coins.length][sum];
-    }
-    public static int min(int x, int y) {
-        if (x >= y) {
-            return y;
+        if (solution[sum] == Integer.MAX_VALUE) {
+            return -1;
         }
-        return x;
+
+        return solution[sum];
     }
     public static void main(String[] args) {
-        int[] coins = {1, 2, 5, 10};
-        int sum = 48;
+        int[] coins = {1, 5, 9};
+        int sum = 51;
 
         System.out.print("Given Denominations: ");
         for (int i = 0; i < coins.length; i++) {
