@@ -9,7 +9,7 @@ public class Sum_Denominations_Coin_Exchange_Problem {
         }
 
         for (int i = 0; i <= sum; i++) {
-            ways[0][1] = 0;
+            ways[0][i] = 0;
         }
 
         for (int i = 1; i <= coins.length; i++) {
