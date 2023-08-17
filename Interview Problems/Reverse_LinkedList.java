@@ -1,5 +1,3 @@
-import java.util.HexFormat;
-
 public class Reverse_LinkedList {
     Node head;
     int linked_list_size;
